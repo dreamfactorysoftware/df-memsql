@@ -34,7 +34,7 @@
   },
   "autoload":    {
     "psr-4": {
-      "DreamFactory\\Core\\SqlSrv\\": "src/"
+      "DreamFactory\\Core\\MemSql\\": "src/"
     }
   },
   "extra":       {
