@@ -1,7 +1,7 @@
 <?php
 namespace DreamFactory\Core\MemSql\Models;
 
-use DreamFactory\Core\SqlDb\Models\MySqlDbConfig;
+use DreamFactory\Core\MySqlDb\Models\MySqlDbConfig;
 
 /**
  * MemSqlDbConfig
