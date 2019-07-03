@@ -3,7 +3,7 @@
 namespace DreamFactory\Core\MemSql\Database\Schema;
 
 use DreamFactory\Core\Enums\DbSimpleTypes;
-use DreamFactory\Core\MySqlDb\Database\Schema\MySqlSchema;
+use DreamFactory\Core\SqlDb\Database\Schema\MySqlSchema;
 
 /**
  * Schema is the class for retrieving metadata information from a MemSQL database.
