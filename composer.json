@@ -30,7 +30,8 @@
     "wiki":   "https://wiki.dreamfactory.com"
   },
   "require":     {
-    "dreamfactory/df-mysqldb": "~0.1.0"
+    "dreamfactory/df-mysqldb": "~0.1.0",
+    "dreamfactory/df-sqldb": "~0.15.3"
   },
   "autoload":    {
     "psr-4": {
