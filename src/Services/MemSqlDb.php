@@ -2,12 +2,12 @@
 
 namespace DreamFactory\Core\MemSql\Services;
 
-use DreamFactory\Core\SqlDb\Services\MySqlDb;
+use DreamFactory\Core\MySqlDb\Services\MySqlDb;
 
 /**
  * Class MemSqlDb
  *
- * @package DreamFactory\Core\SqlDb\Services
+ * @package DreamFactory\Core\MySqlDb\Services
  */
 class MemSqlDb extends MySqlDb
 {
