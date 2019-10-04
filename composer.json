@@ -29,6 +29,14 @@
     "issues": "https://github.com/dreamfactorysoftware/df-memsql/issues",
     "wiki":   "https://wiki.dreamfactory.com"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories":      [
+    {
+      "type": "vcs",
+      "url":  "https://github.com/dreamfactorysoftware/df-mysqldb"
+    }
+  ],
   "require":     {
     "dreamfactory/df-mysqldb": "~0.1.0",
     "dreamfactory/df-sqldb": "~0.16.0"
