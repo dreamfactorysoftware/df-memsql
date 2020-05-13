@@ -38,8 +38,8 @@
     }
   ],
   "require":     {
-    "dreamfactory/df-mysqldb": "~0.3.1",
-    "dreamfactory/df-sqldb": "~0.17.2"
+    "dreamfactory/df-mysqldb": "~0.3",
+    "dreamfactory/df-sqldb": "~0.17"
   },
   "autoload":    {
     "psr-4": {
