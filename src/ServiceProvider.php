@@ -33,7 +33,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             $df->addType(
                 new ServiceType([
                     'name'                  => 'memsql',
-                    'label'                 => 'SingleStore',
+                    'label'                 => 'MemSQL (SingleStore)',
                     'description'           => 'Database service supporting MemSQL connections.',
                     'group'                 => ServiceTypeGroups::DATABASE,
                     'subscription_required' => LicenseLevel::SILVER,
