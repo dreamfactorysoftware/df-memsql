@@ -2,6 +2,7 @@
 
 namespace DreamFactory\Core\MemSql\Database\Schema;
 
+use Arr;
 use DreamFactory\Core\Enums\DbSimpleTypes;
 use DreamFactory\Core\SqlDb\Database\Schema\MySqlSchema;
 
@@ -13,7 +14,7 @@ class MemSqlSchema extends MySqlSchema
     protected function translateSimpleColumnTypes(array &$info)
     {
         // override this in each schema class
-        $type = (isset($info['type'])) ? $info['type'] : null;
+        $type = $info['type'] ?? null;
         switch ($type) {
             // some types need massaging, some need other required properties
             case 'pk':
@@ -36,7 +37,7 @@ class MemSqlSchema extends MySqlSchema
             case DbSimpleTypes::TYPE_TIMESTAMP_ON_CREATE:
             case DbSimpleTypes::TYPE_TIMESTAMP_ON_UPDATE:
                 $info['type'] = 'timestamp';
-                $default = (isset($info['default'])) ? $info['default'] : null;
+                $default = $info['default'] ?? null;
                 if (!isset($default)) {
                     $default = 'CURRENT_TIMESTAMP';
                     if (DbSimpleTypes::TYPE_TIMESTAMP_ON_UPDATE === $type) {
@@ -56,7 +57,7 @@ class MemSqlSchema extends MySqlSchema
             case DbSimpleTypes::TYPE_BOOLEAN:
                 $info['type'] = 'tinyint';
                 $info['type_extras'] = '(1)';
-                $default = (isset($info['default'])) ? $info['default'] : null;
+                $default = $info['default'] ?? null;
                 if (isset($default)) {
                     // convert to bit 0 or 1, where necessary
                     $info['default'] = (int)filter_var($default, FILTER_VALIDATE_BOOLEAN);
@@ -98,7 +99,7 @@ SHOW DATABASES
 MYSQL;
 
         $results = $this->selectColumn($sql);
-        $results = array_values(array_flip(array_except(array_flip($results), ['information_schema', 'memsql', 'cluster'])));
+        $results = array_values(array_flip(Arr::except(array_flip($results), ['information_schema', 'memsql', 'cluster'])));
 
         return $results;
     }

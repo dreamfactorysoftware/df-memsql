@@ -21,6 +21,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         // Add our database drivers override.
         $this->app->resolving('db', function (DatabaseManager $db) {
             $db->extend('memsql', function ($config) {
+                if (is_string($config['modes'])) {
+                    $config['modes'] = explode(",", $config['modes']);
+                }
                 $connector = new MemSqlConnector();
                 $connection = $connector->connect($config);
 
@@ -33,7 +36,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             $df->addType(
                 new ServiceType([
                     'name'                  => 'memsql',
-                    'label'                 => 'MemSQL',
+                    'label'                 => 'SingleStore / MemSQL',
                     'description'           => 'Database service supporting MemSQL connections.',
                     'group'                 => ServiceTypeGroups::DATABASE,
                     'subscription_required' => LicenseLevel::SILVER,
@@ -46,7 +49,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         // Add our database extensions.
-        $this->app->resolving('db.schema', function (DbSchemaExtensions $db) {
+        $this->app->resolving('df.db.schema', function (DbSchemaExtensions $db) {
             $db->extend('memsql', function ($connection) {
                 return new MemSqlSchema($connection);
             });
