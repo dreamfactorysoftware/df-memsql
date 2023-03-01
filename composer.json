@@ -38,7 +38,7 @@
     }
   ],
   "require":     {
-    "dreamfactory/df-mysqldb": "~0.3",
+    "dreamfactory/df-mysqldb": "~0.4",
     "dreamfactory/df-sqldb": "~1.0"
   },
   "autoload":    {
