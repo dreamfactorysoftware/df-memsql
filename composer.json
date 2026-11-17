@@ -34,7 +34,7 @@
   "require":     {
     "php": "^8.3",
     "laravel/helpers": "^1.8",
-    "dreamfactory/df-mysqldb": "~1.0",
+    "dreamfactory/df-mysqldb": "~0.4",
     "dreamfactory/df-sqldb": "~1.4"
   },
   "require-dev": {
