@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-11-18
+- Requires df-mysqldb ~0.4 and df-sqldb ~1.4.
+- Laravel 13 package metadata (PHP 8.3 or later).
+
 ## 0.2.0 - 2019-07-15
 - Updated to suit MySQL licensing changes
 
